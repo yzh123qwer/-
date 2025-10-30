@@ -459,12 +459,6 @@ def Net_train(train_loader, val_loader, net_name):
     #------------------------
     train_plot.Plot(grid = True, save_mode = True, png_name = net_name)
     acc_plot.Plot(grid = True, save_mode = True, png_name = net_name)
-    #train_plot.Plot_big(100,120,grid = True, save_mode = True, png_name = net_name)
-    #train_plot.Plot_big(120,140,grid = True, save_mode = True, png_name = net_name)
-    #train_plot.Plot_big(140,160,grid = True, save_mode = True, png_name = net_name)
-    #acc_plot.Plot_big(100,120,grid = True, save_mode = True, png_name = net_name)
-    #acc_plot.Plot_big(120,140,grid = True, save_mode = True, png_name = net_name)
-    #acc_plot.Plot_big(140,160,grid = True, save_mode = True, png_name = net_name)
     #------------------------
     #------------------------
 
@@ -494,6 +488,7 @@ def Net_loader(net_name):
     model = torch.load(net_name, weights_only=False)
     return model
 
+# 程序主函数
 def main():
     read_cond = True
     timer = Timer()
@@ -540,20 +535,5 @@ def main():
 
 main()
 
-#df = pd.read_excel('D:\\试验数据_2025_09_11\\A0.xlsx', header=None, usecols='A:G',skiprows=100000, nrows=10000)
-#df = pd.read_excel('D:\\试验数据_2025_09_11\\A0.xlsx', header=0, usecols='A:G',skiprows=100000, nrows=10000)
-# 跳过前100000行，从100001行开始读取
-# 如果header参数为0，则取读取的第一行(100001)为表头，参数为None，则不取表头。
 
-#print("第一个print", '\n', df)
-#print("第二个print", '\n', df.loc[0:0])
-#print("第三个print", '\n', df.loc[0:5])
-
-#vec1 = df.loc[0:5, 1]
-#vec2 = df.loc[0:5, 2]
-#vec3 = vec1 @ vec2
-#print("d")
-
-#print("第四个print", "\n", df.loc[0, 1], "   ", df.loc[0, 2])
-#print("第四个print", df.loc[0, 1] * df.loc[0, 2])
 
